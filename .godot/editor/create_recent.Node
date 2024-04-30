@@ -1,5 +1,6 @@
-AnimationPlayer
 AudioStreamPlayer2D
+AudioListener2D
+AnimationPlayer
 Label
 Node
 RayCast2D
@@ -11,4 +12,3 @@ Sprite2D
 AnimatableBody2D
 TileMap
 Camera2D
-CharacterBody2D
