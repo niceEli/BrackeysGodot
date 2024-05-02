@@ -3,3 +3,6 @@ res://scenes/player.tscn
 res://scenes/killzone.tscn
 res://scenes/game_hud.tscn
 res://scenes/game_manager.tscn
+res://scenes/Camera.gd
+res://scripts/game_manager.gd
+res://scripts/coin.gd
