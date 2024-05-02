@@ -1,8 +1,10 @@
 res://scenes/coin.tscn::6e2f19e0a7faadeff01b6d4aa4604d3f::1714422425::res://.godot/exported/133200997/export-96b2131180b71dd158e52c5527d22dd4-coin.scn
-res://scenes/game.tscn::fd4fefe490d9c41be8ac507407b3f61c::1714437471::res://.godot/exported/133200997/export-c2a7af834e91ff64325daddf58e45dc0-game.scn
-res://scenes/killzone.tscn::7cbe6518a374a1a20f7d642b40c0a8eb::1714437472::res://.godot/exported/133200997/export-494bf1445653c44a49a39c8f8b1ce8d0-killzone.scn
+res://scenes/game.tscn::ce6ec46a82fa9219399e5264554041b1::1714682716::res://.godot/exported/133200997/export-c2a7af834e91ff64325daddf58e45dc0-game.scn
+res://scenes/killzone.tscn::7cbe6518a374a1a20f7d642b40c0a8eb::1714680974::res://.godot/exported/133200997/export-494bf1445653c44a49a39c8f8b1ce8d0-killzone.scn
 res://scenes/platform.tscn::30afe3eb24a5a9a0288e33d1d5500742::1714421934::res://.godot/exported/133200997/export-cc2f727180cd42d9c13434cb55b1ce69-platform.scn
-res://scenes/player.tscn::1447a0f3eceb1edfc2d65ac9897829f1::1714437471::res://.godot/exported/133200997/export-234fb6894ec6226e856ab7f825500d3d-player.scn
+res://scenes/player.tscn::f9bb0d4f7fb5c779391c6997fbb49de4::1714680974::res://.godot/exported/133200997/export-234fb6894ec6226e856ab7f825500d3d-player.scn
 res://scenes/music.tscn::e83b9d653a976b743bb31cd49ed7a5ea::1714421606::res://.godot/exported/133200997/export-bfd8027ae1117ff610be6f2619a76089-music.scn
 res://scenes/slime.tscn::cda67ccbf4d0e606c49594a95a23e76b::1714421934::res://.godot/exported/133200997/export-cfec31ac835903e5b6c8af87b017aecf-slime.scn
 res://default_bus_layout.tres::d25826a21775823cfa792762687a604f::1714421588::res://.godot/exported/133200997/export-19246414aa9fb561ced4b8dce477acec-default_bus_layout.res
+res://scenes/game_hud.tscn::a9d93894807fd027e507fc48d40f625a::1714680974::res://.godot/exported/133200997/export-69e54a99d772501c7a0f5f12daf6b507-game_hud.scn
+res://scenes/game_manager.tscn::7e01bc50d0db536fd17c93d6a00fd8a6::1714680974::res://.godot/exported/133200997/export-18773aed85e32f6f60d8a5aa586802e3-game_manager.scn
