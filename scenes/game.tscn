@@ -1,6 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://h0a0snyh4mmp"]
+[gd_scene load_steps=15 format=3 uid="uid://h0a0snyh4mmp"]
 
-[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_sbbis"]
+[ext_resource type="PackedScene" uid="uid://baklqsocx4euy" path="res://scenes/game_manager.tscn" id="1_ix1lr"]
 [ext_resource type="PackedScene" uid="uid://dkg8xf618kxko" path="res://scenes/player.tscn" id="1_wq1id"]
 [ext_resource type="Texture2D" uid="uid://blp780r3anc0t" path="res://assets/sprites/world_tileset.png" id="2_2qvyc"]
 [ext_resource type="PackedScene" uid="uid://dyjj0okob0ynb" path="res://scenes/platform.tscn" id="3_ic628"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://bk41vgd8tq5up" path="res://scenes/killzone.tscn" id="5_hqjid"]
 [ext_resource type="PackedScene" uid="uid://dr6tsu876pgh8" path="res://scenes/slime.tscn" id="6_3yovd"]
 [ext_resource type="FontFile" uid="uid://bdhhiardw1m3y" path="res://assets/fonts/PixelOperator8.ttf" id="7_1lt1y"]
-[ext_resource type="FontFile" uid="uid://clqehtxpd524" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="9_8fw1o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uchqr"]
 texture = ExtResource("2_2qvyc")
@@ -456,22 +455,8 @@ _data = {
 
 [node name="Game" type="Node2D"]
 
-[node name="GameManager" type="Node" parent="."]
+[node name="GameManager" parent="." instance=ExtResource("1_ix1lr")]
 unique_name_in_owner = true
-script = ExtResource("1_sbbis")
-
-[node name="Coins" type="Label" parent="GameManager"]
-offset_left = 368.0
-offset_top = -152.0
-offset_right = 448.0
-offset_bottom = -122.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("9_8fw1o")
-theme_override_font_sizes/font_size = 8
-text = "You Collected 0 Coins."
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_kgo6o")

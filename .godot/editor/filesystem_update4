@@ -1,3 +1,5 @@
-res://scenes/player.tscn
 res://scenes/game.tscn
+res://scenes/player.tscn
 res://scenes/killzone.tscn
+res://scenes/game_hud.tscn
+res://scenes/game_manager.tscn

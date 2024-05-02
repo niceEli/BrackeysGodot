@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://baklqsocx4euy"]
+
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_ox228"]
+[ext_resource type="FontFile" uid="uid://clqehtxpd524" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_wjfi7"]
+[ext_resource type="PackedScene" uid="uid://d1665vdv0mk33" path="res://scenes/game_hud.tscn" id="3_fxki2"]
+
+[node name="GameManager" type="Node"]
+script = ExtResource("1_ox228")
+
+[node name="Coins" type="Label" parent="."]
+offset_left = 368.0
+offset_top = -152.0
+offset_right = 448.0
+offset_bottom = -122.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_wjfi7")
+theme_override_font_sizes/font_size = 8
+text = "You Collected 0 Coins."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="GameHud" parent="." instance=ExtResource("3_fxki2")]

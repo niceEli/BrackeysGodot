@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name PlayerClass
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var jump = $Jump
@@ -12,14 +13,31 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var floored : int = 0
 
+var coyote : int = 0
+
+var jump_queue : int = 0
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-
+	# Coyote Time
+	if is_on_floor():
+		coyote = 0
+	else:
+		coyote += 1
+	
+	# Jump Queue
+	if Input.is_action_just_pressed("Jump"):
+		jump_queue = 5
+	else:
+		jump_queue -= 1
+	
 	# Handle jump.
-	if Input.is_action_just_pressed("Jump") and is_on_floor():
+	if jump_queue >= 0 and coyote <= 10:
 		velocity.y = JUMP_VELOCITY
+		coyote = 11
+		jump_queue = -1
 		jump.play()
 		
 	if is_on_floor() && floored == 0:
