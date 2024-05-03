@@ -17,3 +17,10 @@ func _process(delta):
 		direction = 1
 	
 	position.x += direction * SPEED * delta
+
+
+func _on_safe_space_body_entered(body: CharacterBody2D):
+	body.velocity.y = body.JUMP_VELOCITY
+	var sfx = body.get_node("Jump") as AudioStreamPlayer2D
+	sfx.play()
+	queue_free()

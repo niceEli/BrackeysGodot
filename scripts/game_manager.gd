@@ -10,6 +10,7 @@ func add_point():
 	game_hud.get_node("CC").text = "Score: " + str(score)
 
 func quit_game():
+	Engine.time_scale = 1
 	var scn_name = get_tree().get_current_scene().name
 	if scn_name == "Main_Menu":
 		get_tree().quit()

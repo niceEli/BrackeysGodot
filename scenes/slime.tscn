@@ -40,8 +40,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kb5v"]
-size = Vector2(8, 10)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_btxqr"]
+size = Vector2(6, 3)
 
 [node name="Slime" type="Node2D"]
 script = ExtResource("1_sw34k")
@@ -51,11 +51,17 @@ position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_8ygnk")
 autoplay = "default"
 
+[node name="SafeSpace" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SafeSpace"]
+position = Vector2(0, -11.5)
+shape = SubResource("RectangleShape2D_btxqr")
+
 [node name="Killzone" parent="." instance=ExtResource("2_vj27a")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(0, -5)
-shape = SubResource("RectangleShape2D_0kb5v")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Killzone"]
+polygon = PackedVector2Array(-4, 0, -4, -9, -3, -9, -3, -1, 3, -1, 3, -9, 4, -9, 4, 0)
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
 position = Vector2(0, -5)
@@ -64,3 +70,5 @@ target_position = Vector2(7, 0)
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 position = Vector2(0, -5)
 target_position = Vector2(-7, 0)
+
+[connection signal="body_entered" from="SafeSpace" to="." method="_on_safe_space_body_entered"]

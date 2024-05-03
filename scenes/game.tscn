@@ -13,7 +13,7 @@
 [sub_resource type="GDScript" id="GDScript_gkt83"]
 resource_name = "CoinShowFromGM"
 script/source = "extends Label
-@onready var game_manager : game_manager = %GameManager
+@onready var game_man : game_manager = %GameManager
 
 
 # Called when the node enters the scene tree for the first time.
@@ -22,8 +22,8 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	text = \"You Collected  \" + str(game_manager.score) + \" Coins.\"
+func _process(_delta):
+	text = \"You Collected  \" + str(game_man.score) + \" Coins.\"
 "
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_u8kbn"]
@@ -475,7 +475,6 @@ texture = ExtResource("2_2qvyc")
 0:5/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_kgo6o"]
-uv_clipping = true
 occlusion_layer_0/light_mask = 1
 occlusion_layer_0/sdf_collision = true
 physics_layer_0/collision_layer = 1
