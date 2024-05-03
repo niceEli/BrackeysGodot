@@ -26,6 +26,7 @@ func _input(_event):
 	if Input.is_action_just_pressed("Pause"):
 		quit_game()
 	if Input.is_action_just_pressed("Reset"):
+		Engine.time_scale = 1
 		get_tree().reload_current_scene()
 	if Input.is_action_just_pressed("Fullscreen"):
 		var config = ConfigFile.new()
