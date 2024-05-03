@@ -1,17 +1,21 @@
 extends Node
+class_name game_manager
 
-@onready var coins = $Coins
 @onready var game_hud = $GameHud
 
 var score = 0
 
 func add_point():
 	score += 1
-	coins.text = "You Collected " + str(score) + " Coins."
 	game_hud.get_node("CC").text = "Score: " + str(score)
 
 func quit_game():
-	get_tree().quit()
+	var scn_name = get_tree().get_current_scene().name
+	if scn_name == "Main_Menu":
+		get_tree().quit()
+	else:
+		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	
 
 func _ready():
 	var config = ConfigFile.new()

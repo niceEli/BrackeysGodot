@@ -1,0 +1,96 @@
+[gd_scene load_steps=8 format=3 uid="uid://b13kccyp2ki10"]
+
+[ext_resource type="FontFile" uid="uid://clqehtxpd524" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_dnhpk"]
+[ext_resource type="PackedScene" uid="uid://baklqsocx4euy" path="res://scenes/game_manager.tscn" id="1_evhrj"]
+[ext_resource type="Script" path="res://scripts/ButtonScnTransfer.gd" id="2_s1360"]
+[ext_resource type="FontFile" uid="uid://bdhhiardw1m3y" path="res://assets/fonts/PixelOperator8.ttf" id="3_6joqv"]
+[ext_resource type="PackedScene" uid="uid://h0a0snyh4mmp" path="res://scenes/game.tscn" id="3_53a1g"]
+[ext_resource type="Script" path="res://scripts/ShtapButton.gd" id="4_rqp8m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_u5ix8"]
+font = ExtResource("1_dnhpk")
+font_size = 64
+outline_size = 32
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameManager" parent="." instance=ExtResource("1_evhrj")]
+unique_name_in_owner = true
+
+[node name="GameHud" parent="GameManager" index="0"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(2.88785e-06, 0.787143, 0.879959, 1)
+
+[node name="MainMenuText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.099
+anchor_right = 0.5
+anchor_bottom = 0.296
+offset_left = -448.0
+offset_top = -0.152008
+offset_right = 448.0
+offset_bottom = 0.192001
+grow_horizontal = 2
+text = "Brackeys Godot"
+label_settings = SubResource("LabelSettings_u5ix8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pla" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.691
+anchor_right = 0.5
+anchor_bottom = 0.79
+offset_left = -128.0
+offset_top = 0.231964
+offset_right = 128.0
+offset_bottom = 0.0799866
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_6joqv")
+theme_override_font_sizes/font_size = 32
+text = "Play"
+script = ExtResource("2_s1360")
+scene = ExtResource("3_53a1g")
+
+[node name="Shtap" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.79
+anchor_right = 0.5
+anchor_bottom = 0.889
+offset_left = -128.0
+offset_top = 0.0799866
+offset_right = 128.0
+offset_bottom = -0.0720215
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_6joqv")
+theme_override_font_sizes/font_size = 32
+text = "Stop"
+script = ExtResource("4_rqp8m")
+
+[connection signal="pressed" from="Pla" to="Pla" method="_on_pressed"]
+[connection signal="pressed" from="Shtap" to="Shtap" method="_on_pressed"]
+
+[editable path="GameManager"]

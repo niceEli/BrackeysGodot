@@ -1,13 +1,30 @@
-[gd_scene load_steps=19 format=3 uid="uid://h0a0snyh4mmp"]
+[gd_scene load_steps=21 format=3 uid="uid://h0a0snyh4mmp"]
 
 [ext_resource type="PackedScene" uid="uid://baklqsocx4euy" path="res://scenes/game_manager.tscn" id="1_ix1lr"]
 [ext_resource type="PackedScene" uid="uid://dkg8xf618kxko" path="res://scenes/player.tscn" id="1_wq1id"]
 [ext_resource type="Texture2D" uid="uid://blp780r3anc0t" path="res://assets/sprites/world_tileset.png" id="2_2qvyc"]
+[ext_resource type="FontFile" uid="uid://clqehtxpd524" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_jlyca"]
 [ext_resource type="PackedScene" uid="uid://dyjj0okob0ynb" path="res://scenes/platform.tscn" id="3_ic628"]
 [ext_resource type="PackedScene" uid="uid://olyf7jw0oc7x" path="res://scenes/coin.tscn" id="4_ltfaj"]
 [ext_resource type="PackedScene" uid="uid://bk41vgd8tq5up" path="res://scenes/killzone.tscn" id="5_hqjid"]
 [ext_resource type="PackedScene" uid="uid://dr6tsu876pgh8" path="res://scenes/slime.tscn" id="6_3yovd"]
 [ext_resource type="FontFile" uid="uid://bdhhiardw1m3y" path="res://assets/fonts/PixelOperator8.ttf" id="7_1lt1y"]
+
+[sub_resource type="GDScript" id="GDScript_gkt83"]
+resource_name = "CoinShowFromGM"
+script/source = "extends Label
+@onready var game_manager : game_manager = %GameManager
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	text = \"You Collected  \" + str(game_manager.score) + \" Coins.\"
+"
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_u8kbn"]
 polygon = PackedVector2Array(-8, -6, -7, -6, -7, -7, -6, -7, -6, -8, 6, -8, 6, -7, 7, -7, 7, -6, 8, -6, 8, 6, 7, 6, 7, 7, 6, 7, 6, 8, -6, 8, -6, 7, -7, 7, -7, 6, -8, 6)
@@ -508,6 +525,21 @@ _data = {
 
 [node name="GameManager" parent="." instance=ExtResource("1_ix1lr")]
 unique_name_in_owner = true
+
+[node name="Coins2" type="Label" parent="GameManager"]
+offset_left = 368.0
+offset_top = -152.0
+offset_right = 448.0
+offset_bottom = -122.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jlyca")
+theme_override_font_sizes/font_size = 8
+text = "You Collected 0 Coins."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+script = SubResource("GDScript_gkt83")
+metadata/_edit_use_anchors_ = true
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 position = Vector2(54, -6)
