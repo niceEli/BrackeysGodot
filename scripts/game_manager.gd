@@ -15,23 +15,25 @@ func quit_game():
 
 func _ready():
 	var config = ConfigFile.new()
-	var err = config.load("user://settings.cfg")
+	var err = config.load("user://settings.Eli_cfg")
 	
 	# If the file didn't load, ignore it.
 	if err != OK:
-		config.save("user://settings.cfg")
+		config.save("user://settings.Eli_cfg")
 	DisplayServer.window_set_mode(config.get_value("screen", "mode", 0))
 
 func _input(_event):
 	if Input.is_action_just_pressed("Pause"):
 		quit_game()
+	if Input.is_action_just_pressed("Reset"):
+		get_tree().reload_current_scene()
 	if Input.is_action_just_pressed("Fullscreen"):
 		var config = ConfigFile.new()
-		var err = config.load("user://settings.cfg")
+		var err = config.load("user://settings.Eli_cfg")
 		
 		# If the file didn't load, ignore it.
 		if err != OK:
-			config.save("user://settings.cfg")
+			config.save("user://settings.Eli_cfg")
 		var wind := DisplayServer.window_get_mode()
 		if wind == 0:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
@@ -42,4 +44,4 @@ func _input(_event):
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 			config.set_value("screen", "mode", 0)
-		config.save("user://settings.cfg")
+		config.save("user://settings.Eli_cfg")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://h0a0snyh4mmp"]
+[gd_scene load_steps=16 format=3 uid="uid://h0a0snyh4mmp"]
 
 [ext_resource type="PackedScene" uid="uid://baklqsocx4euy" path="res://scenes/game_manager.tscn" id="1_ix1lr"]
 [ext_resource type="PackedScene" uid="uid://dkg8xf618kxko" path="res://scenes/player.tscn" id="1_wq1id"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bk41vgd8tq5up" path="res://scenes/killzone.tscn" id="5_hqjid"]
 [ext_resource type="PackedScene" uid="uid://dr6tsu876pgh8" path="res://scenes/slime.tscn" id="6_3yovd"]
 [ext_resource type="FontFile" uid="uid://bdhhiardw1m3y" path="res://assets/fonts/PixelOperator8.ttf" id="7_1lt1y"]
+[ext_resource type="Texture2D" uid="uid://dlqpc06fn2mvr" path="res://icon.svg" id="9_ag7gv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uchqr"]
 texture = ExtResource("2_2qvyc")
@@ -540,3 +541,8 @@ text = "Great Job!"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(112, -24)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("9_ag7gv")
