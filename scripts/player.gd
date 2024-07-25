@@ -1,12 +1,12 @@
 extends CharacterBody2D
 class_name PlayerClass
 
-@onready var animated_sprite = $AnimatedSprite2D
-@onready var jump = $Jump
-@onready var land = $Land
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var jump: AudioStreamPlayer2D = $Jump
+@onready var land: AudioStreamPlayer2D = $Land
 
-const SPEED = 130.0
-const JUMP_VELOCITY = -300.0
+const SPEED: float         = 130.0
+const JUMP_VELOCITY: float = -300.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
